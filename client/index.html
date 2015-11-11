@@ -1,3 +1,7 @@
-<body ng-app="pteraformer">
-  <div ng-include="'client/views/mainPage.html'"></div>
+<head>
+  <base href="/">
+</head>
+<body ng-app="pteraformer" ng-strict-di="">
+  <p> here goes shared text for all views </p>
+  <div ui-view></div>
 </body>
