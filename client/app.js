@@ -1,4 +1,4 @@
-angular.module('pteraformer',['angular-meteor','ui.router']);
+angular.module('pteraformer',['angular-meteor','ui.router','pteraformer-place-reference-directive']);
 angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider, $locationProvider){
   $locationProvider.html5Mode(true);
   $stateProvider
