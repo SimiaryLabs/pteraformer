@@ -1,1 +1,1 @@
-angular.module('pteraformer',['angular-meteor']);
+angular.module('pteraformer',['angular-meteor','ui.router']);
