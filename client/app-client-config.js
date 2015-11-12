@@ -1,4 +1,7 @@
-angular.module('pteraformer',['angular-meteor','ui.router','pteraformer-place-reference-directive']);
+//angular.module('pteraformer',['angular-meteor','ui.router','pteraformer-place-reference-directive']);
+//var app = angular.module('pteraformer',['angular-meteor','ui.router',
+//                                        'pteraformer-cliff-service',
+//                                        'pteraformer-place-reference-directive']);
 angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider, $locationProvider){
   $locationProvider.html5Mode(true);
   $stateProvider
@@ -19,11 +22,8 @@ angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider
     });
   $urlRouterProvider.otherwise("/layers");
 });
-angular.module('pteraformer').controller('LayersController', function ($scope, $meteor) {
+angular.module('pteraformer').controller('LayersController', function ($scope, $meteor, CLIFFService) {
 });
 angular.module('pteraformer').controller('CorpusController', function ($scope, $meteor, $stateParams) {
   $scope.corpusId = $stateParams.corpusId;
-});
-angular.module('pteraformer').controller('DocumentController', function ($scope, $meteor, $stateParams) {
-  $scope.documentId = $stateParams.documentId;
 });

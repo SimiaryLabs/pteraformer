@@ -2,6 +2,7 @@ angular@1.2.1
 angular-meteor-data@0.0.5
 angular-templates@0.0.1
 angular:angular@1.4.7
+angular:angular-server@1.4.0
 angularui:angular-ui-router@0.2.15
 autopublish@1.0.4
 autoupdate@1.2.4
@@ -48,6 +49,7 @@ mobile-experience@1.0.1
 mobile-status-bar@1.0.6
 mongo@1.1.3
 mongo-id@1.0.1
+netanelgilad:angular-server@1.4.0
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
