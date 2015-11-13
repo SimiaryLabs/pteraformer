@@ -10,12 +10,12 @@ angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider
       templateUrl: 'client/views/layers-dashboard.html',
       controller: 'LayersController'
     })
-    .state('corpus', {
+    .state('corpusEditor', {
       url: '/corpus/:corpusId',
-      templateUrl: 'client/views/corpus-dashboard.html',
-      controller: 'CorpusController'
+      templateUrl: 'client/components/CorpusEditor/CorpusEditorView.html',
+      controller: 'CorpusEditorController'
     })
-    .state('docViewer', {
+    .state('docEditor', {
       url: '/doc/:documentId',
       templateUrl: 'client/components/GeoDocumentEditor/GeoDocumentEditorView.html',
       controller: 'GeoDocumentEditorController'
