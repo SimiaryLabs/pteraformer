@@ -21,11 +21,11 @@ angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider
       controller: 'GeoDocumentEditorController'
     })
     .state('userDataDashboard', {
-      url: '/user-data',
+      url: '/',
       templateUrl: 'client/components/UserDataDashboard/UserDataDashboardView.html',
       controller: 'UserDataDashboardController'
     });
-  $urlRouterProvider.otherwise("/user-data");
+  $urlRouterProvider.otherwise("/");
 });
 angular.module('pteraformer').controller('LayersController', function ($scope, $meteor, CLIFFService) {
 });
