@@ -4,8 +4,8 @@ angular.module('pteraformer').factory("UserDataFactory", function() {
     this.gazetteers = gazetteers;
   };
 
-  UserData.prototype.addLayer = function (layer) {
-    this.layers.push(layer);
+  UserData.prototype.addCorpus = function (corpus) {
+    this.layers.push(corpus);
   }
 
   UserData.prototype.addGazetteer = function (gazetteer) {
