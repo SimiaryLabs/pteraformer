@@ -2,7 +2,9 @@ angular@1.2.1
 angular-meteor-data@0.0.5
 angular-templates@0.0.1
 angular:angular@1.4.7
+angular:angular-cookies@1.4.7
 angular:angular-server@1.4.0
+angularui:angular-ui-bootstrap@0.13.0
 angularui:angular-ui-router@0.2.15
 autopublish@1.0.4
 autoupdate@1.2.4

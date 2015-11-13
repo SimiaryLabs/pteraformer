@@ -20,3 +20,5 @@ angular
 angularui:angular-ui-router
 netanelgilad:angular-server
 twbs:bootstrap
+angularui:angular-ui-bootstrap
+angular:angular-cookies
