@@ -15,10 +15,10 @@ angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider
       templateUrl: 'client/views/corpus-dashboard.html',
       controller: 'CorpusController'
     })
-    .state('document', {
-      url: '/document/:documentId',
-      templateUrl: 'client/views/document-dashboard.html',
-      controller: 'DocumentController'
+    .state('docViewer', {
+      url: '/doc/:documentId',
+      templateUrl: 'client/components/GeoDocumentEditor/GeoDocumentEditorView.html',
+      controller: 'GeoDocumentEditorController'
     });
   $urlRouterProvider.otherwise("/layers");
 });
