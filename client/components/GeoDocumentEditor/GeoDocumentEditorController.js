@@ -5,5 +5,6 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   CLIFFDocumentService.fromText(testText).then(function(result) {
     console.log(result);
   });
+  console.log(uuid.v4());
   //console.log(cliffDoc);
 });
