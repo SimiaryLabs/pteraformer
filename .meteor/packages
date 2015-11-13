@@ -23,4 +23,6 @@ angularui:angular-ui-router
 netanelgilad:angular-server
 angular:angular-cookies
 angularui:angular-ui-bootstrap
-jparker:crypto-md5
+jaywon:meteor-node-uuid
+bevanhunt:leaflet
+nmccready:angular-simple-logger

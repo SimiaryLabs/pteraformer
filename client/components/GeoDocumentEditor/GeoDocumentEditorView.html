@@ -1,17 +1,41 @@
 <div class="row">
   <div class="col-lg-6">
     <rd-widget>
-      <rd-widget-header icon="fa-tasks" title="Document text">
-        <a href="#">Manage</a>
+      <rd-widget-header icon="fa-file-text-o" title="Document text">
+        <input type="text" placeholder="Search" class="form-control input-sm" />
       </rd-widget-header>
-      <rd-widget-body classes="medium no-padding">
+      <rd-widget-body>
         <p>Here you will see the details of document number: {{ documentId }}</p>
       </rd-widget-body>
     </rd-widget>
   </div>
   <div class="col-lg-6">
     <rd-widget>
-      <rd-widget-header icon="fa-users" title="Users">
+      <rd-widget-body classes="medium no-padding">
+        <div id='map'></div>
+      </rd-widget-body>
+<!--
+      <rd-widget-header icon="fa-globe" title="Map">
+        <input type="text" placeholder="Search" class="form-control input-sm" />
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr><th class="text-center">ID</th><th>Username</th><th>Role</th><th>Account</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="text-center">1</td><td>Joe Bloggs</td><td>Super Admin</td><td>AZ23045</td></tr>
+              <tr><td class="text-center">2</td><td>Timothy Hernandez</td><td>Admin</td><td>AU24783</td></tr>
+              <tr><td class="text-center">3</td><td>Joe Bickham</td><td>User</td><td>AM23781</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </rd-widget-body>
+-->
+    </rd-widget>
+    <rd-widget>
+      <rd-widget-header icon="fa-file-text" title="Metadata">
         <input type="text" placeholder="Search" class="form-control input-sm" />
       </rd-widget-header>
       <rd-widget-body classes="medium no-padding">

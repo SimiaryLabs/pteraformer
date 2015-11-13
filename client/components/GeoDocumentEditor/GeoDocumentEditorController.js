@@ -7,4 +7,5 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   });
   console.log(uuid.v4());
   //console.log(cliffDoc);
+
 });
