@@ -5,11 +5,6 @@
 angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider, $locationProvider){
   $locationProvider.html5Mode(true);
   $stateProvider
-    .state('layers', {
-      url: '/layers',
-      templateUrl: 'client/views/layers-dashboard.html',
-      controller: 'LayersController'
-    })
     .state('corpusEditor', {
       url: '/corpus/:corpusId',
       templateUrl: 'client/components/CorpusEditor/CorpusEditorView.html',
@@ -26,9 +21,4 @@ angular.module('pteraformer').config(function($urlRouterProvider, $stateProvider
       controller: 'UserDataDashboardController'
     });
   $urlRouterProvider.otherwise("/");
-});
-angular.module('pteraformer').controller('LayersController', function ($scope, $meteor, CLIFFService) {
-});
-angular.module('pteraformer').controller('CorpusController', function ($scope, $meteor, $stateParams) {
-  $scope.corpusId = $stateParams.corpusId;
 });
