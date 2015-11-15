@@ -73,6 +73,7 @@ Meteor.startup(function () {
   if (UserData.find().count() === 0) {
     var userdata = [
       { '_id': "public",
+        'username': "_public",
         'name': "Public datasets"
       }
     ];
