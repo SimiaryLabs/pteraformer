@@ -3,6 +3,7 @@ angular-meteor-data@0.0.6
 angular-templates@0.0.1
 angular:angular@1.4.7
 angular:angular-cookies@1.4.7
+angular:angular-sanitize@1.4.7
 angular:angular-server@1.4.0
 angularui:angular-ui-bootstrap@0.13.0
 angularui:angular-ui-router@0.2.15
