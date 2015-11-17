@@ -16,8 +16,8 @@
             </thead>
             <tbody>
               <tr ng-repeat="doc in docs">
-                <td>{{ doc._id }}</td>
-                <td>{{ doc.properties.name }}</td>
+                <td><a href="doc/{{doc._id}}">{{ doc._id }}</a></td>
+                <td><a href="doc/{{doc._id}}">{{ doc.properties.name }}</a></td>
                 <td>{{ doc.properties.modifyDate }}</td>
                 <td>
                   <div ng-if="isParsed(doc)">

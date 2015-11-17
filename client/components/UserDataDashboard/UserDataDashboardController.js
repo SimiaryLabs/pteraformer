@@ -1,3 +1,11 @@
-angular.module('pteraformer').controller('UserDataDashboardController', function ($scope, $meteor, $location) {
-  $location.search({ "q": "cow", "lat": 0.3, "lng": 40.5, "l": 5 });
+angular.module('pteraformer').controller('UserDataDashboardController', function ($scope, $meteor, $stateParams, $location, CLIFFDocumentService) {
+  if (!$stateParams.userId || 0 === $stateParams.userId.length) {
+    $stateParams.userId = "public";
+  }
+  $scope.userId = $stateParams.userId;
+  $scope.userData = $scope.$meteorObject(UserData, $stateParams.userId);
+  $scope.corpora = $meteor.collection(function() {
+    return Corpora.find({ owner: $stateParams.userId });
+  });
+
 });

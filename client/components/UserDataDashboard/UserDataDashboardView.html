@@ -1,3 +1,56 @@
 <div class="row">
-  <div class="col-md-6"><p>User data dashboard, including all data layers (corpora) and gazetteers</p></div>
+  <div class="col-lg-12">
+    <p>{{ userData.name }}</p>
+  </div>
+  <div class="col-lg-12">
+    <rd-widget>
+      <rd-widget-header icon="fa-file-text-o" title="Corpus list">
+        <input type="text" placeholder="Search" class="form-control input-sm" />
+      </rd-widget-header>
+      <rd-widget-body classes="large no-padding">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Modify date</th>
+<!--
+                <th>Geo-parsed</th>
+-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="corpus in corpora">
+                <td><a href="corpus/{{corpus._id}}">{{ corpus._id }}</a></td>
+                <td><a href="corpus/{{corpus._id}}">{{ corpus.properties.name }}</a></td>
+                <td>{{ corpus.properties.modifyDate }}</td>
+<!--
+                <td>
+                  <div ng-if="isParsed(doc)">
+                    <span class="text-success"><i class="fa fa-check"></i></span>
+                  </div>
+                  <div ng-if="!isParsed(doc)">
+                    <span class="text-danger"><i class="fa fa-warning"></i></span>
+                  </div>
+                </td>
+-->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </rd-widget-body>
+      <rd-widget-footer>
+        <ul class="pagination pagination-sm pull-right">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </rd-widget-footer>
+    </rd-widget>
+  </div>
+
 </div>

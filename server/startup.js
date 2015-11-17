@@ -76,14 +76,16 @@ Meteor.startup(function () {
         'owner': "public",
         'properties': {
           '@context': 'http://schema.org',
-          'name': 'CLAVIN sample docs'
+          'name': 'CLAVIN sample docs',
+          'modifyDate': Date.now()
         }
       },
       { '_id': "2",
         'owner': "public",
         'properties': {
           '@context': 'http://schema.org',
-          'name': 'Wiki samples'
+          'name': 'Wiki samples',
+          'modifyDate': Date.now()
         }
       }
     ];
@@ -94,7 +96,8 @@ Meteor.startup(function () {
     var userdata = [
       { '_id': "public",
         'username': "_public",
-        'name': "Public datasets"
+        'name': "Public datasets",
+        'modifyDate': Date.now()
       }
     ];
     for (var i = 0; i < userdata.length; i++)
