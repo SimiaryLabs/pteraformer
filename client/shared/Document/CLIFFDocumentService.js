@@ -1,9 +1,11 @@
 // This factory creates a new Document from CLIFF geoparsed results
-angular.module('pteraformer').service("CLIFFDocumentService", function (DocumentFactory, CLIFFService) {
+angular.module('pteraformer').service("CLIFFDocumentService", function (DocumentFactory, CLIFFService, $sanitize) {
   var cliffVersion = "cliff-2_3_0";
 
   // return a new Document from a raw text string
   this.fromText = function(rawText) { 
+    // sanitize it first so that we can trust to render later on
+    // rawText = $sanitize(rawText);
     return CLIFFService.getParse(rawText).then(
       function success(response) {
         var doc = new DocumentFactory(rawText, "", {});
@@ -13,15 +15,14 @@ angular.module('pteraformer').service("CLIFFDocumentService", function (Document
         var cliffOrganizations = response.data.results.organizations;
         var cliffPeople = response.data.results.people;
 
-        var markedUpText = rawText;
         // insert the mentions as markup going from last to first
         cliffPlacesMentions.sort(function(a,b) { return (a.source.charIndex > b.source.charIndex) ? 1 : ((b.source.charIndex > a.source.charIndex) ? -1 : 0); });
         for (var i = cliffPlacesMentions.length-1; i >=0; i--) {
           var charIndex = cliffPlacesMentions[i].source.charIndex;
           var sourceString = cliffPlacesMentions[i].source.string;
           var id = cliffPlacesMentions[i].id;
-          var markUpStart = "<placeref id=\""+id+"\">";
-          var markUpEnd = "</placeref>";
+          var markUpStart = "<place-reference id=\""+id+"\">";
+          var markUpEnd = "</place-reference>";
           markedUpText = [markedUpText.slice(0, charIndex+sourceString.length), markUpEnd, markedUpText.slice(charIndex+sourceString.length)].join('');
           markedUpText = [markedUpText.slice(0, charIndex), markUpStart, markedUpText.slice(charIndex)].join('');
         }
@@ -56,8 +57,8 @@ angular.module('pteraformer').service("CLIFFDocumentService", function (Document
             var charIndex = cliffPlacesMentions[i].source.charIndex;
             var sourceString = cliffPlacesMentions[i].source.string;
             var id = cliffPlacesMentions[i].id;
-            var markUpStart = "<placeref id=\""+id+"\">";
-            var markUpEnd = "</placeref>"; 
+            var markUpStart = "<place-reference id=\""+id+"\">";
+            var markUpEnd = "</place-reference>"; 
             markedUpText = [markedUpText.slice(0, charIndex+sourceString.length), markUpEnd, markedUpText.slice(charIndex+sourceString.length)].join('');
             markedUpText = [markedUpText.slice(0, charIndex), markUpStart, markedUpText.slice(charIndex)].join('');
           }

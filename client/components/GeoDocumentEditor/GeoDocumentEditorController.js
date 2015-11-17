@@ -1,4 +1,4 @@
-angular.module('pteraformer').controller('GeoDocumentEditorController', function ($scope, $meteor, $stateParams, CLIFFDocumentService) {
+angular.module('pteraformer').controller('GeoDocumentEditorController', function ($scope, $meteor, $stateParams, CLIFFDocumentService, $sce) {
   $scope.documents = $meteor.collection(Documents);
   $scope.documentId = $stateParams.documentId;
   $scope.doc = $meteor.object(Documents, $stateParams.documentId);

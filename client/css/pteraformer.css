@@ -1,0 +1,7 @@
+.place-ref {
+  font-weight: bold;
+  background-color: yellow;
+}
+.place-ref:hover {
+  background-color: cyan;
+}
