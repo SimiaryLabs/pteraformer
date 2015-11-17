@@ -1,27 +1,33 @@
 <div class="row">
   <div class="col-lg-12">
+    <p>{{ corpus.properties.name }}</p>
+  </div>
+  <div class="col-lg-12">
     <rd-widget>
       <rd-widget-header icon="fa-file-text-o" title="Document list">
-        <input type="text" placeholder="Search" class="form-control input-sm" />
+        <input type="button" placeholder="Geoparse all" class="btn btn-success input-sm" ng-click="geoParseAll()" value="geoparse"/>
+        <!-- <input type="text" placeholder="Search" class="form-control input-sm" /> -->
       </rd-widget-header>
       <rd-widget-body classes="large no-padding">
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
-              <tr><th class="text-center">ID</th><th>Username</th><th>Role</th></tr>
+              <tr><th>ID</th><th>Title</th><th>Modify date</th><th>Geo-parsed</th></tr>
             </thead>
             <tbody>
-              <tr><td>RDVMPC001</td><td>238.103.133.37</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>RDVMPC002</td><td>68.66.63.170</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>RDVMPC003</td><td>76.117.212.33</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-              <tr><td>RDPHPC001</td><td>91.88.224.5</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>RDESX001</td><td>197.188.15.93</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>RDESX002</td><td>168.85.154.251</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>RDESX003</td><td>209.25.191.61</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-              <tr><td>RDESX004</td><td>252.37.192.235</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>RDTerminal01</td><td>139.71.18.207</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>RDTerminal02</td><td>136.80.122.212</td><td><span tooltip="Could not connect!" class="text-warning"><i class="fa fa-flash"></i></span></td></tr>
-              <tr><td>RDDomainCont01</td><td>196.80.245.33</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+              <tr ng-repeat="doc in docs">
+                <td>{{ doc._id }}</td>
+                <td>{{ doc.properties.name }}</td>
+                <td>{{ doc.properties.modifyDate }}</td>
+                <td>
+                  <div ng-if="isParsed(doc)">
+                    <span class="text-success"><i class="fa fa-check"></i></span>
+                  </div>
+                  <div ng-if="!isParsed(doc)">
+                    <span class="text-danger"><i class="fa fa-warning"></i></span>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>

@@ -7,8 +7,12 @@ Meteor.startup(function () {
         'properties': {
           '@context': 'http://schema.org/',
           '@type': 'CreativeWork',
-          'name': 'Document 1'
-        }
+          'name': 'Document 1',
+          'modifyDate': Date.now()
+        },
+        'parsingResults': {
+        },
+        'markedUpText': ""
       },
       { '_id': "2",
         'corpus': "1",
@@ -16,8 +20,12 @@ Meteor.startup(function () {
         'properties': {
           '@context': 'http://schema.org/',
           '@type': 'CreativeWork',
-          'name': 'Document 2'
-        }
+          'name': 'Document 2',
+          'modifyDate': Date.now()
+        },
+        'parsingResults': {
+        },
+        'markedUpText': ""
       },
       { '_id': "3",
         'corpus': "1",
@@ -25,8 +33,12 @@ Meteor.startup(function () {
         'properties': {
           '@context': 'http://schema.org/',
           '@type': 'CreativeWork',
-          'name': 'Document 3'
-        }
+          'name': 'Document 3',
+          'modifyDate': Date.now()
+        },
+        'parsingResults': {
+        },
+        'markedUpText': ""
       },
       { '_id': "4",
         'corpus': "2",
@@ -34,8 +46,12 @@ Meteor.startup(function () {
         'properties': {
           '@context': 'http://schema.org/',
           '@type': 'CreativeWork',
-          'name': 'Joan Finnigan'
-        }
+          'name': 'Joan Finnigan',
+          'modifyDate': Date.now()
+        },
+        'parsingResults': {
+        },
+        'markedUpText': ""
       },
       { '_id': "5",
         'corpus': "2",
@@ -43,8 +59,12 @@ Meteor.startup(function () {
         'properties': {
           '@context': 'http://schema.org/',
           '@type': 'CreativeWork',
-          'name': 'Joan Finnigan'
-        }
+          'name': 'Chalair Aviation',
+          'modifyDate': Date.now()
+        },
+        'parsingResults': {
+        },
+        'markedUpText': ""
       }
     ];
     for (var i = 0; i < documents.length; i++)

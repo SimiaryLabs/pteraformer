@@ -1,14 +1,21 @@
 angular.module('pteraformer').controller('CorpusEditorController', function ($scope, $meteor, $stateParams, CLIFFDocumentService) {
   $scope.corpusId = $stateParams.corpusId;
-
-  var testText = "In Syria, two airstrikes west of Al-Hasakah successfully struck multiple ISIL buildings, including an air observation building and staging areas. George Clinton lives near the Damascus hotel.";
-  CLIFFDocumentService.fromText(testText).then(function(result) {
-    console.log(result);
+  $scope.corpus = $scope.$meteorObject(Corpora, $stateParams.corpusId);
+  $scope.docs = $meteor.collection(function() {
+    return Documents.find({ corpus: $stateParams.corpusId });
   });
-  console.log(uuid.v4());
-  //console.log(cliffDoc);
-  var htmlOutput = '<p>' + testText.replace(/\n([ \t]*\n)+/g, '</p><p>')
-                 .replace('\n', '<br />') + '</p>';
-  console.log(htmlOutput);
+  $scope.isParsed = function(doc) {
+    if (!(doc.markedUpText) || 0 === doc.markedUpText.length)
+      return false;
+    else
+      return true;
+  };  
 
+  $scope.geoParseAll = function() {
+    $scope.docs.forEach(function(doc) {
+      CLIFFDocumentService.fromDocument(doc).then(function(result) {
+        //console.log(result);
+      });
+   });
+  };
 });
