@@ -6,10 +6,12 @@ angular.module('pteraformer').directive('placeReference', function() {
       id: '@',
       geo: '@'
     },
-    template: '<span class="place-ref"> {{geo}} <ng-transclude></ng-transclude></span>',
+    template: '<span class="place-ref"><ng-transclude></ng-transclude></span>',
     link: function ($scope, element, attrs) {
       element.bind('click', function () {
-        element.html('<span class="place-ref">You clicked me!</span>');
+        //element.html('<span class="place-ref">You clicked me!</span>');
+        var geoObj = JSON.parse($scope.geo);
+        console.log(geoObj);
       });
     }
   };
