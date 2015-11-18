@@ -15,13 +15,17 @@ angular.module('pteraformer').service("CLIFFDocumentService", function (Document
         var cliffOrganizations = response.data.results.organizations;
         var cliffPeople = response.data.results.people;
 
+        var markedUpText = rawText;
         // insert the mentions as markup going from last to first
         cliffPlacesMentions.sort(function(a,b) { return (a.source.charIndex > b.source.charIndex) ? 1 : ((b.source.charIndex > a.source.charIndex) ? -1 : 0); });
         for (var i = cliffPlacesMentions.length-1; i >=0; i--) {
           var charIndex = cliffPlacesMentions[i].source.charIndex;
           var sourceString = cliffPlacesMentions[i].source.string;
           var id = cliffPlacesMentions[i].id;
-          var markUpStart = "<place-reference id=\""+id+"\">";
+          var lat = cliffPlacesMentions[i].lat;
+          var lon = cliffPlacesMentions[i].lon;
+          var geoJson = '{"type":"Feature","geometry":{"type":"Point","coordinates":['+lon+','+lat+']}}'.replace(/\"/g, "&quot;");
+          var markUpStart = '<place-reference id="'+id+'" geo="'+geoJson+'">';
           var markUpEnd = "</place-reference>";
           markedUpText = [markedUpText.slice(0, charIndex+sourceString.length), markUpEnd, markedUpText.slice(charIndex+sourceString.length)].join('');
           markedUpText = [markedUpText.slice(0, charIndex), markUpStart, markedUpText.slice(charIndex)].join('');
@@ -57,7 +61,11 @@ angular.module('pteraformer').service("CLIFFDocumentService", function (Document
             var charIndex = cliffPlacesMentions[i].source.charIndex;
             var sourceString = cliffPlacesMentions[i].source.string;
             var id = cliffPlacesMentions[i].id;
-            var markUpStart = "<place-reference id=\""+id+"\">";
+            var lat = cliffPlacesMentions[i].lat;
+            var lon = cliffPlacesMentions[i].lon;
+            //var geoJson = '{"type":"Feature","geometry":{"type":"Point","coordinates":['+lon+','+lat+']}}'.replace(/"/g, "&quot;");
+            var geoJson = '{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:['+lon+','+lat+']}}';
+            var markUpStart = '<place-reference id="'+id+'" geo="'+geoJson+'">';
             var markUpEnd = "</place-reference>"; 
             markedUpText = [markedUpText.slice(0, charIndex+sourceString.length), markUpEnd, markedUpText.slice(charIndex+sourceString.length)].join('');
             markedUpText = [markedUpText.slice(0, charIndex), markUpStart, markedUpText.slice(charIndex)].join('');
