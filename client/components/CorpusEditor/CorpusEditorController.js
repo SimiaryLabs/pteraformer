@@ -1,5 +1,6 @@
-angular.module('pteraformer').controller('CorpusEditorController', function ($scope, $meteor, $stateParams, CLIFFDocumentService) {
+angular.module('pteraformer').controller('CorpusEditorController', function ($scope, $rootScope, $meteor, $stateParams, CLIFFDocumentService) {
   $scope.corpusId = $stateParams.corpusId;
+  $rootScope.currentCorpusId = $stateParams.corpusId;
   $scope.corpus = $scope.$meteorObject(Corpora, $stateParams.corpusId);
   $scope.docs = $meteor.collection(function() {
     return Documents.find({ corpus: $stateParams.corpusId });

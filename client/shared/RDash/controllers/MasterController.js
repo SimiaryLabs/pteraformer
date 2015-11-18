@@ -1,4 +1,4 @@
-angular.module('RDash').controller('MasterController', function ($scope, $meteor, $cookieStore) {
+angular.module('RDash').controller('MasterController', function ($scope, $rootScope, $meteor, $cookieStore) {
   /**
    * Sidebar Toggle & Cookie Control
    */
@@ -29,4 +29,5 @@ angular.module('RDash').controller('MasterController', function ($scope, $meteor
   window.onresize = function() {
     $scope.$apply();
   };
+  
 });
