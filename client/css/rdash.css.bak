@@ -63,7 +63,7 @@
   padding-right: 0;
 }
 .row.header .meta .page {
-  font-size: 24px;
+  font-size: 17px;
   padding-top: 11px;
 }
 .row.header .meta .breadcrumb-links {
@@ -211,7 +211,6 @@ body {
   font-family: 'Alegreya Sans';
   /* font-family: 'Montserrat'; */
   color: #333333 !important;
-  font-size: 16px;
 }
 .row {
   margin-left: 0 !important;
@@ -425,10 +424,10 @@ ul.sidebar .sidebar-list .menu-icon {
   background: #fafafa;
 }
 .widget .widget-body table thead * {
-  font-size: 17px !important;
+  font-size: 14px !important;
 }
 .widget .widget-body table tbody * {
-  font-size: 16px !important;
+  font-size: 13px !important;
 }
 .widget .widget-body .error {
   color: #ff0000;
@@ -487,7 +486,4 @@ ul.sidebar .sidebar-list .menu-icon {
 .widget .widget-content .title {
   font-size: 28px;
   display: block;
-}
-.btn {
-  font-size: 16px;
 }
