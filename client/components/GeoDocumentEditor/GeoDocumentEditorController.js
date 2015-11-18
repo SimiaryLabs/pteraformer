@@ -1,4 +1,4 @@
-angular.module('pteraformer').controller('GeoDocumentEditorController', function ($scope, $rootScope, $meteor, $stateParams, CLIFFDocumentService, $sce) {
+angular.module('pteraformer').controller('GeoDocumentEditorController', function ($scope, $rootScope, $meteor, $stateParams, CLIFFDocumentService, leafletData) {
   $scope.documentId = $stateParams.documentId;
   $rootScope.currentDocumentId = $stateParams.documentId;
   $scope.doc = $meteor.object(Documents, $stateParams.documentId);
@@ -33,4 +33,7 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   //               .replace('\n', '<br />') + '</p>';
   //console.log(htmlOutput);
 
+  leafletData.getMap("docMap").then(function(map) {
+    console.log(map);
+  });
 });
