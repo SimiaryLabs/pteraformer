@@ -29,9 +29,15 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   };
 
   //console.log(cliffDoc);
-  //var htmlOutput = '<p>' + testText.replace(/\n([ \t]*\n)+/g, '</p><p>')
-  //               .replace('\n', '<br />') + '</p>';
+  $scope.prettyHTMLFormat = function(text) {
+    if (text === undefined || text === null) {
+      return '';
+    } else {
+      return '<p>' + text.replace(/\n([ \t]*\n)+/g, '</p><p>')
+                 .replace('\n', '<br />') + '</p>';
+    }
   //console.log(htmlOutput);
+  }
 
   leafletData.getMap("docMap").then(function(map) {
     console.log(map);

@@ -19,6 +19,17 @@ angular.module('pteraformer').directive('placeReference', function(leafletData) 
         }
         //console.log(geoObj);
       });
+
+      $scope.menuOptions = [
+        ['Edit', function ($itemScope) {
+          console.log("edit");
+          console.log($itemScope.id);
+        }],
+        ['Remove', function($itemScope) {
+          console.log("remove");
+          console.log($itemScope.id);
+        }]
+      ];
     }
   };
 });
