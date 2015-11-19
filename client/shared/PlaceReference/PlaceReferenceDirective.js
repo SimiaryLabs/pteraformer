@@ -1,4 +1,4 @@
-angular.module('pteraformer').directive('placeReference', function() {
+angular.module('pteraformer').directive('placeReference', function(leafletData) {
   return {
     restrict: 'E',
     transclude: 'true',
@@ -11,7 +11,13 @@ angular.module('pteraformer').directive('placeReference', function() {
       element.bind('click', function () {
         //element.html('<span class="place-ref">You clicked me!</span>');
         var geoObj = JSON.parse($scope.geo);
-        console.log(geoObj);
+        if (!(geoObj === undefined || geoObj === null)) {
+          leafletData.getMap("docMap").then(function(map) {
+            var lGeoJson = L.geoJson(geoObj);
+            map.setView(lGeoJson.getBounds().getCenter(), 6);
+          });
+        }
+        //console.log(geoObj);
       });
     }
   };
