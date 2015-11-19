@@ -3,6 +3,7 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   $rootScope.currentDocumentId = $stateParams.documentId;
   $scope.doc = $meteor.object(Documents, $stateParams.documentId);
   $scope.corpus = $meteor.object(Corpora, $scope.doc.corpus);
+  $rootScope.currentCorpusId = $scope.doc.corpus;
 
   //var testText = "In Syria, two airstrikes west of Al-Hasakah successfully struck multiple ISIL buildings, including an air observation building and staging areas. George Clinton lives near the Damascus hotel.";
   //CLIFFDocumentService.fromText(testText).then(function(result) {
@@ -10,7 +11,8 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   //});
 
   CLIFFDocumentService.fromDocument($scope.doc).then(function(result) {
-    console.log(result);
+    //$scope.$apply();
+    //console.log(result);
   });
   console.log(uuid.v4());
 
