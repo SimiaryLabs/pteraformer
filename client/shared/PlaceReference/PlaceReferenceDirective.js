@@ -6,7 +6,7 @@ angular.module('pteraformer').directive('placeReference', function() {
       id: '@',
       geo: '@'
     },
-    template: '<span class="place-ref"><ng-transclude></ng-transclude></span>',
+    templateUrl: 'client/shared/PlaceReference/place-reference.html',
     link: function ($scope, element, attrs) {
       element.bind('click', function () {
         //element.html('<span class="place-ref">You clicked me!</span>');
