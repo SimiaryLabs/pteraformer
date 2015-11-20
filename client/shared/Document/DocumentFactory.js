@@ -6,7 +6,7 @@ angular.module('pteraformer').factory("DocumentFactory", function() {
     this.parsingResults = {};
     this.placeReferences = [];
     this.matchedPlaces = {};
-    this.properties: {
+    this.properties = {
       '@context': 'http://schema.org/',
       '@type': 'CreativeWork',
       'name': 'Document',
