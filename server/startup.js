@@ -12,6 +12,12 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
+        'placeReferences': [
+        ],
+        'matchedPlaces': {
+          "type": "FeatureCollection",
+          "features": []
+        },
         'markedUpText': ""
       },
       { '_id': "2",
@@ -24,6 +30,12 @@ Meteor.startup(function () {
           'modifyDate': Date.now()
         },
         'parsingResults': {
+        },
+        'placeReferences': [
+        ],
+        'matchedPlaces': {
+          "type": "FeatureCollection",
+          "features": []
         },
         'markedUpText': ""
       },
@@ -38,6 +50,12 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
+        'placeReferences': [
+        ],
+        'matchedPlaces': {
+          "type": "FeatureCollection",
+          "features": []
+        },
         'markedUpText': ""
       },
       { '_id': "4",
@@ -50,6 +68,12 @@ Meteor.startup(function () {
           'modifyDate': Date.now()
         },
         'parsingResults': {
+        },
+        'placeReferences': [
+        ],
+        'matchedPlaces': {
+          "type": "FeatureCollection",
+          "features": []
         },
         'markedUpText': ""
       },
@@ -64,7 +88,32 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
+        'placeReferences': [
+        ],
+        'matchedPlaces': {
+          "type": "FeatureCollection",
+          "features": []
+        },
         'markedUpText': ""
+      },
+      { '_id': "6",
+        'corpus': "2",
+        'rawText': 'The Oxford Dictionary defines "Chinatown" as "... a district of any non-Chinese town, especially a city or seaport, in which the population is predominantly of Chinese origin".[1] However, according to a television station in Hawaii, that definition is not necessarily true, as they said Chinatowns nowadays have little to do with China.[2] Even further, the line between Little Saigon and Chinatown is blurred as some "Vietnamese" enclaves are in fact some city\'s "second Chinatown", and some "Chinatowns" are in fact pan-Asian, meaning they could also be counted as Koreatown or Little India.',
+        'properties': {
+          '@context': 'http://schema.org/',
+          '@type': 'CreativeWork',
+          'name': 'Chinatown',
+          'modifyDate': Date.now()
+        },
+        'parsingResults': {
+        },
+        'placeReferences': [
+        ],
+        'matchedPlaces': {
+          "type": "FeatureCollection",
+          "features": []
+        },
+        'markedUpText': "" 
       }
     ];
     for (var i = 0; i < documents.length; i++)
