@@ -1,13 +1,18 @@
 // This factory creates a new Document object
 angular.module('pteraformer').factory("DocumentFactory", function() {
-  function Document(rawText, markedUpText, parsingResults) {
+  function Document(rawText) {
     this.rawText = rawText;
-    this.markedUpText = markedUpText;
-    this.parsingResults = parsingResults;
-  };
-
-  Document.prototype.addParsingResult = function(parsingTechnique, parsingResult) {
-    this.parsingResults[parsingTechnique] = parsingResult;
+    this.markedUpText = "";
+    this.parsingResults = {};
+    this.placeReferences = [];
+    this.matchedPlaces = {};
+    this.properties: {
+      '@context': 'http://schema.org/',
+      '@type': 'CreativeWork',
+      'name': 'Document',
+      'modifyDate': Date.now()
+    };
+    // add in corpus, properties, 
   };
 
   return Document;

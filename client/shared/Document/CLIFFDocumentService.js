@@ -38,7 +38,7 @@ angular.module('pteraformer').service("CLIFFDocumentService", function (Document
     // rawText = $sanitize(rawText);
     return CLIFFService.getParse(rawText).then(
       function success(response) {
-        var doc = new DocumentFactory(rawText, "", {});
+        var doc = new DocumentFactory(rawText);
         doc = addParsingResults(doc, response.data.results, true);
         return doc;
       },
