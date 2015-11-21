@@ -101,7 +101,7 @@ angular.module('pteraformer').service("CLIFFDocumentService", function (Document
       // now update place references
       // check if there is already a place reference for the charIndex and string
       var newPlaceReference = true;
-      for (int i = 0; i < doc.placeReferences.length; i++) {
+      for (var i = 0; i < doc.placeReferences.length; i++) {
         if (doc.placeReferences.charIndex == charIndex && doc.placeReferences.string == sourceString) {
           doc.placeReferences.matchedPlacesFeatureIdx.push(featureIdx);
           newPlaceReference = false;
