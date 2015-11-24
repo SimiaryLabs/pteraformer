@@ -86,6 +86,7 @@ angular.module('pteraformer').service("CLIFFDocumentService", function (Document
       feature.properties.population = cliffPlacesMentions[i].population;
 
       var featureIdx = doc.matchedPlaces.features.length;
+
       // check if the feature is already in the list (by source + id)
       for (var i = 0; i < doc.matchedPlaces.features; i++) {
         if (doc.matchedPlaces.features[i].properties.source == cliffVersion && doc.matchedPlaces.features[i].id == feature.properties.id) {
