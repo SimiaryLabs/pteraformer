@@ -1,4 +1,4 @@
-angular.module('pteraformer').controller('CorpusEditorController', function ($scope, $rootScope, $meteor, $stateParams, CLIFFDocumentService) {
+angular.module('pteraformer').controller('CorpusEditorController', function ($scope, $rootScope, $meteor, $stateParams, CLIFFDocumentService, leafletData) {
   $scope.corpusId = $stateParams.corpusId;
   $rootScope.currentCorpusId = $stateParams.corpusId;
   $scope.corpus = $scope.$meteorObject(Corpora, $stateParams.corpusId);
@@ -19,4 +19,8 @@ angular.module('pteraformer').controller('CorpusEditorController', function ($sc
       });
    });
   };
+
+  leafletData.getMap("docMap").then(function(map) {
+    console.log(map);
+  });
 });
