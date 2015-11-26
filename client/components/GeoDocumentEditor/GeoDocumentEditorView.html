@@ -1,13 +1,19 @@
 <leaflet id="docMap" width="100%" height="250px"></leaflet>
 
 <div class="row">
-  <div class="col-md-2">1</div>
-  <div class="col-md-8">2</div>
-  <div class="col-md-2">3</div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
+  <div class="col-md-2">
+    <rd-widget>
+      <rd-widget-header icon="fa-file-text" title="Metadata">
+        <input type="text" placeholder="Search" class="form-control input-sm" />
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div>
+          <p>Just some test Content</p>
+        </div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+  <div class="col-md-8">
     <rd-widget>
       <rd-widget-header icon="fa-file-text-o" title="{{ corpus.properties.name }} : {{ doc.properties.name }}">
         <input type="text" placeholder="Search" class="form-control input-sm" />
@@ -19,15 +25,7 @@
       </rd-widget-body>
     </rd-widget>
   </div>
-  <div class="col-md-6">
-    <rd-widget>
-      <rd-widget-header icon="fa-globe" title="Map map map">
-      </rd-widget-header>
-      <rd-widget-body classes="medium no-padding">
-        
-      </rd-widget-body>
-    </rd-widget>
-    <br/>
+  <div class="col-md-2">
     <rd-widget>
       <rd-widget-header icon="fa-file-text" title="Metadata">
         <input type="text" placeholder="Search" class="form-control input-sm" />
