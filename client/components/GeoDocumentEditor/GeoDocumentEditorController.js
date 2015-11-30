@@ -1,4 +1,4 @@
-angular.module('pteraformer').controller('GeoDocumentEditorController', function ($scope, $rootScope, $meteor, $stateParams, CLIFFDocumentService, leafletData) {
+angular.module('pteraformer').controller('GeoDocumentEditorController', function ($scope, $rootScope, $meteor, $stateParams, CLIFFDocumentService, HeideltimeDocumentService, leafletData) {
   $scope.documentId = $stateParams.documentId;
   $rootScope.currentDocumentId = $stateParams.documentId;
   $scope.doc = $meteor.object(Documents, $stateParams.documentId);
@@ -9,6 +9,11 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   //CLIFFDocumentService.fromText(testText).then(function(result) {
   //  console.log(result);
   //});
+
+  var testTempText = "Albert Einstein was born in 1876.";
+  HeideltimeDocumentService.fromText(testTempText).then(function(result) {
+    console.log(result);
+  });
 
   CLIFFDocumentService.fromDocument($scope.doc).then(function(result) {
     //$scope.$apply();

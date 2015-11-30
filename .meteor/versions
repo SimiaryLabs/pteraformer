@@ -47,6 +47,7 @@ lai:collection-extensions@0.1.4
 launch-screen@1.0.4
 livedata@1.0.15
 logging@1.0.8
+maxkferg:temp@1.0.0
 meteor@1.1.10
 meteor-base@1.0.1
 meteorhacks:async@1.0.0
