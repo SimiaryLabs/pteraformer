@@ -2,6 +2,7 @@ Meteor.startup(function () {
   if (Documents.find().count() === 0) {
     var documents = [
       { '_id': "1",
+        'owner': 'public',
         'corpus': "1",
         'rawText': "The Somali Ministry of Information, Posts and Telecommunications started the process of distributing 6,000 hand-held radios to Internally Displaced Persons (IDPs) in Mogadishu. In the first batch, the Ministry handed out 1,000 radios at Badbado camp, Somalia's largest IDP camp. The radios were received by to those most in need: namely, female-headed households, elderly and youth groups.",
         'properties': {
@@ -12,15 +13,22 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
-        'placeReferences': [
+        'entityReferences': [
         ],
-        'matchedPlaces': {
-          "type": "FeatureCollection",
-          "features": []
+        'entities': {
+          'place': {
+            "type": "FeatureCollection",
+            "features": []
+          },
+          'time': [],
+          'timeInterval': [],
+          'person': [],
+          'organization': []
         },
         'markedUpText': ""
       },
       { '_id': "2",
+        'owner': 'public',
         'corpus': "1",
         'rawText': "A new wave of battle-hardened \"lone wolf\" terrorists is expected to infiltrate Britain and the US from African and other war zones to carry out attacks, according to security experts. British and American Somalis currently fighting alongside Islamist rebels in Somalia are expected to pose a serious threat upon their return from Africa, training others in the techniques they learnt on the battlefield and in terrorist training camps.",
         'properties': {
@@ -31,15 +39,22 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
-        'placeReferences': [
+        'entityReferences': [
         ],
-        'matchedPlaces': {
-          "type": "FeatureCollection",
-          "features": []
+        'entities': {
+          'place': {
+            "type": "FeatureCollection",
+            "features": []
+          },
+          'time': [],
+          'timeInterval': [],
+          'person': [],
+          'organization': []
         },
         'markedUpText': ""
       },
       { '_id': "3",
+        'owner': 'public',
         'corpus': "1",
         'rawText': "Other reports indicated pro-Somali government soldiers backed by the Kenya forces were advancing to a new al Shabaab stronghold in the Gedo region of southwestern Somalia. Al Shabaab fighters in Burdubo village were also reported to be vacating from the area as the military exercises intensified in the past few weeks in Gedo region. Meanwhile, Kenya has bought three helicopter gunships from Russia and eight reconnaissance vehicles to boost its war abilities.",
         'properties': {
@@ -50,15 +65,22 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
-        'placeReferences': [
+        'entityReferences': [
         ],
-        'matchedPlaces': {
-          "type": "FeatureCollection",
-          "features": []
+        'entities': {
+          'place': {
+            "type": "FeatureCollection",
+            "features": []
+          },
+          'time': [],
+          'timeInterval': [],
+          'person': [],
+          'organization': []
         },
         'markedUpText': ""
       },
       { '_id': "4",
+        'owner': 'public',
         'corpus': "2",
         'rawText': "Joan Finnigan was born in and raised in Ottawa. She was the daughter of Frank Finnigan, an Ottawa Senators' hockey legend, and mother Maye Horner, and the sister of Frank Jr, Norma and Ross Finnigan.[1] She was educated at Lisgar Collegiate, Carleton University and Queen’s University. Together with her husband, Grant Mackenzie, whom she married in 1949, Finnigan had three children, Jonathan, Roderick and Martha Mackenzie.\nMacKenzie died in 1965 and Ms. Finnigan raised the children as a single mother, while supporting the family through her writing. Her daughter Martha recalls as a child falling asleep to the sound of the typewriter at night.[2] Finnigan died in Ottawa on August 12, 2007 at the age of 81. She was survived by her three children and seven grandchildren.",
         'properties': {
@@ -69,15 +91,22 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
-        'placeReferences': [
+        'entityReferences': [
         ],
-        'matchedPlaces': {
-          "type": "FeatureCollection",
-          "features": []
+        'entities': {
+          'place': {
+            "type": "FeatureCollection",
+            "features": []
+          },
+          'time': [],
+          'timeInterval': [],
+          'person': [],
+          'organization': []
         },
         'markedUpText': ""
       },
       { '_id': "5",
+        'owner': 'public',
         'corpus': "2",
         'rawText': "Chalair Aviation, previously Chalair, is an airline with its head office on the grounds of Caen – Carpiquet Airport in Carpiquet, France.[1] It provides scheduled services with the A5 Airlinair code under a franchise agreement, using Beechcraft turboprops, as well as corporate shuttle services, freight (including toxic and corrosive material), business and sanitary flights, pilot certification and training, aircraft management and engineering, noticeably in La Réunion and neighboring islands (such as a rather epic landing on a beach in Tromelin Island, as can be seen from the company's website), and JAR Part 145 maintenance services. Its base is Caen. The airline now employs a total 42 persons, among them 27 are pilots, and plans to fly 35,000 scheduled passengers in 2007. They are the only airline to offer flights to Annecy.\nStarting 1997, besides business and freight flights, Chalair Aviation began operating a Fairchild Swearingen Metroliner for scheduled flights between Le Mans and Eindhoven and an ATR 42 between Cherbourg and Orly, with their own IATA code, M6, abandoned since — but a new designator is expected soon.",
         'properties': {
@@ -88,15 +117,22 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
-        'placeReferences': [
+        'entityReferences': [
         ],
-        'matchedPlaces': {
-          "type": "FeatureCollection",
-          "features": []
+        'entities': {
+          'place': {
+            "type": "FeatureCollection",
+            "features": []
+          },
+          'time': [],
+          'timeInterval': [],
+          'person': [],
+          'organization': []
         },
         'markedUpText': ""
       },
       { '_id': "6",
+        'owner': 'public',
         'corpus': "2",
         'rawText': 'The Oxford Dictionary defines "Chinatown" as "... a district of any non-Chinese town, especially a city or seaport, in which the population is predominantly of Chinese origin".[1] However, according to a television station in Hawaii, that definition is not necessarily true, as they said Chinatowns nowadays have little to do with China.[2] Even further, the line between Little Saigon and Chinatown is blurred as some "Vietnamese" enclaves are in fact some city\'s "second Chinatown", and some "Chinatowns" are in fact pan-Asian, meaning they could also be counted as Koreatown or Little India.',
         'properties': {
@@ -107,11 +143,17 @@ Meteor.startup(function () {
         },
         'parsingResults': {
         },
-        'placeReferences': [
+        'entityReferences': [
         ],
-        'matchedPlaces': {
-          "type": "FeatureCollection",
-          "features": []
+        'entities': {
+          'place': {
+            "type": "FeatureCollection",
+            "features": []
+          },
+          'time': [],
+          'timeInterval': [],
+          'person': [],
+          'organization': []
         },
         'markedUpText': "" 
       }
