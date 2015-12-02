@@ -1,57 +1,82 @@
 angular.module('pteraformer').service('HeideltimeService', function($http) {
-  var heideltimeUrl = "http://localhost:9009";
-  this.getParse = function(text, language) {
-    if (!language)
-      language = 'ENGLISH';
+  var heideltimeUrl = "http://localhost:8080/TemporalTagger/";
+  this.getParse = function(text, date) {
+    if (!date) {
+      var datenow = new Date();
+      var year = datenow.getUTCFullYear();
+      var month = datenow.getUTCMonth()+1;
+      var day = datenow.getUTCDate();
+      date = year + "-" + month + "-" + day;
+      //console.log(date);
+    }
     return $http({
       method: "POST",
-      url: heideltimeUrl,
+      url: heideltimeUrl + "TaggerEnglishNarratives",
       data: {
-        q: text,
-        l: language
+        "q": text,
+        "date": date
+      }
+    });
+  };
+
+  this.getParseNarratives = function(text, date) {
+    return getParse(text, date);
+  };
+
+  this.getParseNews = function(text, date) {
+    if (!date) {
+      var datenow = Date.now();
+      var year = datenow.getUTCFullYear();
+      var month = datenow.getUTCMonth()+1;
+      var day = datenow.getUTCDate();
+      date = year + "-" + month + "-" + day;
+      //console.log(date);
+    }
+    return $http({
+      method: "POST",
+      url: heideltimeUrl + "TaggerEnglishNews",
+      data: {
+        "q": text,
+        "date": date
+      }
+    });
+  };
+
+  this.getParseScientific = function(text, date) {
+    if (!date) {
+      var datenow = new Date();
+      var year = datenow.getUTCFullYear();
+      var month = datenow.getUTCMonth()+1;
+      var day = datenow.getUTCDate();
+      date = year + "-" + month + "-" + day;
+      //console.log(date);
+    }
+    return $http({
+      method: "POST",
+      url: heideltimeUrl + "TaggerEnglishScientific",
+      data: {
+        "q": text,
+        "date": date
+      }
+    });
+  };
+
+  this.getParseColloquial = function(text, date) {
+    if (!date) {
+      var datenow = new Date();
+      var year = datenow.getUTCFullYear();
+      var month = datenow.getUTCMonth()+1;
+      var day = datenow.getUTCDate();
+      date = year + "-" + month + "-" + day;
+      //console.log(date);
+    }
+    return $http({
+      method: "POST",
+      url: heideltimeUrl + "TaggerEnglishColloquial",
+      data: {
+        "q": text,
+        "date": date
       }
     });
   };
 });
-/**
-  this.getParse = function(text, language) {
-    //console.log("in GetParse: ");
-    //console.log(callback);
-    if (language === undefined || language === null)
-      language = "ENGLISH";
-    // create a temporary file
-    var tempFile = Temp.openSync('ht_ptera');
-    console.log(tempFile);
-    fs.writeFileSync(tempFile.path, text);
-    console.log(execSync);
-    var stdout = execSync('/usr/bin/java -jar ~/heideltime-standalone/de.unihd.dbs.heideltime.standalone.jar -l '+language+' -c ~/heideltime-standalone/config.props '+tempFile.path);
-    Temp.cleanupSync(function(err,stats) {
-    });
-    return stdout;
-  };
-});
-**/
-/**
-    Temp.track();
-    Temp.open('ht_ptera', function(err,tempFile) {
-      if (!err) {
-        fs.write(tempFile.fd, text);
-        fs.close(tempFile.fd, function(err) {
-          exec('/usr/bin/java -jar ~/heideltime-standalone/de.unihd.dbs.heideltime.standalone.jar -l '+language+' -c ~/heideltime-standalone/config.props '+tempFile.path, function(err, stdout) {
-            //console.log(err);
-            //console.log(stdout.trim());
-            var resp = {'timeml': stdout.trim()};
-            //console.log(resp);
-            //console.log(callback);
-            if (callback) {
-              callback(resp);
-            }
-            Temp.cleanupSync(function(err,stats) {
-            });
-          });
-        })
-      }
-    });
-  };
-});
-**/

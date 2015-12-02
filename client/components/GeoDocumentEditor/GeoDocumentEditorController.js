@@ -10,12 +10,15 @@ angular.module('pteraformer').controller('GeoDocumentEditorController', function
   //  console.log(result);
   //});
 
-  var testTempText = "Albert Einstein was born in 1876.";
-  HeideltimeDocumentService.fromText(testTempText).then(function(result) {
-    console.log(result);
-  });
+  //var testTempText = "Albert Einstein was born in 1876.";
+  //HeideltimeDocumentService.fromText(testTempText).then(function(result) {
+  //  console.log(result);
+  //});
 
   CLIFFDocumentService.fromDocument($scope.doc).then(function(result) {
+    HeideltimeDocumentService.fromDocument($scope.doc).then(function(result) {
+      console.log(result);
+    });
     //$scope.$apply();
     //console.log(result);
   });

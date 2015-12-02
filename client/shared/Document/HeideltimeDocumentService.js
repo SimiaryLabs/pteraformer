@@ -55,6 +55,8 @@ angular.module('pteraformer').service("HeideltimeDocumentService", function (Doc
 
   function addParsingResults(doc, results, updateMarkedUpText) {
     doc.parsingResults[heideltimeVersion] = results;
+    //var xmlDoc = $.parseXML(results);
+
 /**
     var cliffPlacesFocus = results.places.focus;
     var cliffPlacesMentions = results.places.mentions;
@@ -152,7 +154,7 @@ angular.module('pteraformer').service("HeideltimeDocumentService", function (Doc
     return HeideltimeService.getParse(rawText).then(
       function success(response) {
         doc = clearHeideltimeResults(doc);
-        doc = addParsingResults(doc, response, updateMarkedUpText);
+        doc = addParsingResults(doc, response);
         return doc;
       },
       function error(response) {
